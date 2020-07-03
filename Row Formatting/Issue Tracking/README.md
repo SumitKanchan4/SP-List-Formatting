@@ -24,6 +24,7 @@ Following columns will be required in the list and in the view
 | Owner            | Person                 |
 | Comments         | Multiple lines of text |
 | ReportedBy       | Person                 |
+| Created          | DateTime               |
 
 
 ## Sample
