@@ -8,7 +8,8 @@ Simple 'Issue Tracking' view, with the focus to track the comments against each 
 
 > Currently it filters on the default view (AllItems.aspx), if implementing on custom view, need to update the values in the json file.
 
-[![Issue Tracking Row View Formatter](/issue tracking row view.gif?raw=true "Issue Tracking Row View Formatter" )]()
+
+![Issue tracking row formatter](./issuetrackingRowFormatter.gif)
  
 ## View requirements
 
