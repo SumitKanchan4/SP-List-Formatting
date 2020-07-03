@@ -1,0 +1,238 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideColumnHeader": true,
+    "hideSelection": true,
+    "rowFormatter": {
+        "elmType": "div",
+        "attributes": {
+            "class": "sp-row-card ms-bgColor-white ms-bgColor-themePrimary--hover ms-fontColor-white--hover"
+        },
+        "debugMode": true,
+        "children": [
+            {
+                "elmType": "div",
+                "style": {
+                    "text-align": "left",
+                    "width": "38%"
+                },
+                "children": [
+                    {
+                        "elmType": "button",
+                        "attributes": {
+                            "class": "sp-row-title"
+                        },
+                        "style": {
+                            "border": "none",
+                            "cursor": "pointer",
+                            "background-color": "white",
+                            "max-width": "85%"
+                        },
+                        "txtContent": "='#' + [$ID] + '. ' + [$Title]",
+                        "customRowAction": {
+                            "action": "defaultClick"
+                        }
+                    },
+                    {
+                        "elmType": "a",
+                        "attributes": {
+                            "href": "= 'AllItems.aspx?FilterField1=Subcategory&FilterValue1=' + [$Subcategory] + '&FilterType1=Choice'"
+                        },
+                        "style": {
+                            "padding": "2px 5px",
+                            "border": "1px solid #b1b6bd",
+                            "float": "right",
+                            "text-decoration": "none",
+                            "color": "inherit"
+                        },
+                        "txtContent": "[$Subcategory]"
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "padding": "10px 1px",
+                            "border-top": "1px solid #b1b6bd",
+                            "min-height": "50px"
+                        },
+                        "txtContent": "[$Shortdescription]"
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "padding": "10px 2px 10px 2px"
+                        },
+                        "children": [
+                            {
+                                "elmType": "a",
+                                "attributes": {
+                                    "class": "ms-bgColor-themePrimary ms-fontColor-neutralLighter",
+                                    "href": "= 'AllItems.aspx?FilterField1=Status&FilterValue1=' + [$Status] + '&FilterType1=Choice'"
+                                },
+                                "style": {
+                                    "border-radius": "5%",
+                                    "padding": "5px",
+                                    "font-weight": "bold"
+                                },
+                                "txtContent": "[$Status]"
+                            },
+                            {
+                                "elmType": "a",
+                                "attributes": {
+                                    "href": "= 'AllItems.aspx?FilterField1=Created&FilterValue1=' + toLocaleDateString([$Created]) + '&FilterType1=DateTime'"
+                                },
+                                "style": {
+                                    "padding": "2px 5px",
+                                    "border": "1px solid #b1b6bd",
+                                    "float": "right",
+                                    "text-decoration": "none",
+                                    "color": "inherit"
+                                },
+                                "txtContent": "= 'Reported On: ' + toLocaleDateString([$Created])"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "elmType": "div",
+                "attributes": {
+                    "class": "ms-borderColor-neutralLight"
+                },
+                "style": {
+                    "flex": "0 0 53px",
+                    "border-left-width": "1px",
+                    "border-left-style": "solid",
+                    "justify-content": "space-evenly",
+                    "align-items": "center",
+                    "margin": "8px"
+                },
+                "children": [
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "font-weight": "bold",
+                            "padding-bottom": "10px",
+                            "padding-left": "10px"
+                        },
+                        "txtContent": "Assigned To "
+                    },
+                    {
+                        "elmType": "img",
+                        "defaultHoverField": "[$Owner]",
+                        "attributes": {
+                            "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$Owner.email] + '&UA=0&size=HR48x48'"
+                        },
+                        "style": {
+                            "border": "1px solid #808080",
+                            "border-radius": "50%",
+                            "left": "50%",
+                            "width": "48px",
+                            "height": "48px",
+                            "margin-left": "18px"
+                        }
+                    },
+                    {
+                        "elmType": "a",
+                        "attributes": {
+                            "class": "ms-font-m",
+                            "href": "= 'AllItems.aspx?viewid=77acd468-1b3a-4117-b919-cc635bfc770f&FilterField1=Owner&FilterValue1=' + [$Owner.title] + '&FilterType1=User'"
+                        },
+                        "style": {
+                            "display": "inline-block",
+                            "width": "90px",
+                            "text-align": "center",
+                            "text-decoration": "none",
+                            "color": "inherit"
+                        },
+                        "txtContent": "=substring([$Owner.title], 0 ,indexOf([$Owner.title],' '))"
+                    }
+                ]
+            },
+            {
+                "elmType": "div",
+                "attributes": {
+                    "class": "ms-borderColor-neutralLight"
+                },
+                "style": {
+                    "flex": "0 0 53px",
+                    "justify-content": "space-evenly",
+                    "align-items": "center",
+                    "margin": "8px"
+                },
+                "children": [
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "font-weight": "bold",
+                            "padding-bottom": "10px",
+                            "padding-left": "10px"
+                        },
+                        "txtContent": "Reported By "
+                    },
+                    {
+                        "elmType": "img",
+                        "defaultHoverField": "[$Author]",
+                        "attributes": {
+                            "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$ReportedBy.email] + '&UA=0&size=HR48x48'"
+                        },
+                        "style": {
+                            "border": "1px solid #808080",
+                            "border-radius": "50%",
+                            "left": "50%",
+                            "width": "48px",
+                            "height": "48px",
+                            "margin-left": "18px"
+                        }
+                    },
+                    {
+                        "elmType": "a",
+                        "attributes": {
+                            "class": "ms-font-m",
+                            "href": "= 'AllItems.aspx?FilterField1=ReportedBy&FilterValue1=' + [$ReportedBy.title] + '&FilterType1=User'"
+                        },
+                        "style": {
+                            "display": "inline-block",
+                            "width": "90px",
+                            "text-align": "center",
+                            "text-decoration": "none",
+                            "color": "inherit"
+                        },
+                        "txtContent": "=substring([$ReportedBy.title], 0 ,indexOf([$ReportedBy.title],' '))"
+                    }
+                ]
+            },
+            {
+                "elmType": "div",
+                "style": {
+                    "text-align": "left",
+                    "width": "60%",
+                    "float": "right",
+                    "border-left": "1px solid #eaeaea",
+                    "overflow-y": "auto",
+                    "max-height": "125px",
+                    "min-height": "100px"
+                },
+                "attributes": {
+                    "class": "sp-row-listPadding"
+                },
+                "children": [
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "font-weight": "bold",
+                            "padding-left": "10px",
+                            "padding-bottom": "5px"
+                        },
+                        "txtContent": "Comments: "
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "padding-left": "10px"
+                        },
+                        "txtContent": "[$Comments]"
+                    }
+                ]
+            }
+        ]
+    }
+}
