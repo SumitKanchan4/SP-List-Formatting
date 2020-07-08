@@ -12,8 +12,7 @@ Add-PnPView -List "Site Pages" -Title "Discussion Board" -Fields "Modified","_Co
 ```
 After the view is created or the columns are added in the existing view, make the view as default
 
-
-[![Discussion Board Row View Formatter](/DiscussionBoard.gif?raw=true "Discussion Board Row Formatter" )]()
+![Discussion Board Row View Formatter](./DiscussionBoard.gif)
  
 ## View requirements
 
