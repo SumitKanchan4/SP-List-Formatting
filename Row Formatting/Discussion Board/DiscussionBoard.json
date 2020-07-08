@@ -1,0 +1,160 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideColumnHeader": true,
+    "hideSelection": true,
+    "rowFormatter": {
+        "elmType": "div",
+        "attributes": {
+            "class": "sp-row-card ms-bgColor-white ms-bgColor-themePrimary--hover ms-fontColor-white--hover ms-fontColor-themePrimary"
+        },
+        "children": [
+            {
+                "elmType": "img",
+                "style": {
+                    "min-width": "213px",
+                    "min-height": "119px",
+                    "max-width": "213px",
+                    "max-height": "119px",
+                    "padding": "5px"
+                },
+                "attributes": {
+                    "src": "=if([$FSObjType] == '1','https://spoprod-a.akamaihd.net/files/fabric/assets/item-types/20/folder.svg', if([$BannerImageUrl] == '', 'https://sumn.sharepoint.com/sites/TeamRnD/_layouts/15/images/sitepagethumbnail.png' , @currentWeb + [$BannerImageUrl]))",
+                    "title": "[$FileLeafRef]"
+                }
+            },
+            {
+                "elmType": "div",
+                "style": {
+                    "height": "=if([$FSObjType] == '1','50px','110px')",
+                    "width": "100%"
+                },
+                "children": [
+                    {
+                        "elmType": "a",
+                        "txtContent": "=if([$FSObjType] == '1',[$FileLeafRef],[$Title])",
+                        "attributes": {
+                            "class": "sp-row-title ms-fontColor-themePrimary",
+                            "href": "=if([$FSObjType] == '1','?id=' + [$FileRef], '[$FileRef]'"
+                        },
+                        "style": {
+                            "text-decoration": "none",
+                            "background-color": "white",
+                            "border": "1px solid transparent",
+                            "cursor": "pointer",
+                            "border-radius": "5px",
+                            "padding": "5px"
+                        }
+                    },
+                    {
+                        "elmType": "img",
+                        "defaultHoverField": "[$_AuthorByline]",
+                        "attributes": {
+                            "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$_AuthorByline.email] + '&UA=0&size=HR48x48'",
+                            "title": "[$_AuthorByline.title]"
+                        },
+                        "style": {
+                            "border": "1px solid #808080",
+                            "border-radius": "50%",
+                            "float": "right",
+                            "width": "48px",
+                            "height": "48px",
+                            "margin-left": "18px",
+                            "display": "=if([$FSObjType] == '1', 'none','block')"
+                        }
+                    },
+                    {
+                        "elmType": "div",
+                        "txtContent": "[$Description]",
+                        "style": {
+                            "padding-top": "10px",
+                            "padding-left": "5px",
+                            "height": "=if([$FSObjType] == '1','0px','72px')"
+                        }
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "width": "100%",
+                            "padding": "0px 10px",
+                            "display": "=if([$FSObjType] == '1', 'none','block')"
+                        },
+                        "children": [
+                            {
+                                "elmType": "span",
+                                "attributes": {
+                                    "iconName": "CommentSolid"
+                                },
+                                "style": {
+                                    "padding-right": "5px"
+                                }
+                            },
+                            {
+                                "elmType": "span",
+                                "txtContent": "=if([$_CommentCount] > 0 , [$_CommentCount], '0'",
+                                "style": {
+                                    "padding-right": "35px"
+                                }
+                            },
+                            {
+                                "elmType": "span",
+                                "attributes": {
+                                    "iconName": "LikeSolid"
+                                },
+                                "style": {
+                                    "padding-right": "5px"
+                                }
+                            },
+                            {
+                                "elmType": "span",
+                                "txtContent": "= if([$_LikeCount] > 0 , [$_LikeCount], '0'",
+                                "style": {
+                                    "padding-right": "15px"
+                                }
+                            },
+                            {
+                                "elmType": "span",
+                                "style": {
+                                    "float": "right",
+                                    "padding-right": "10px"
+                                },
+                                "children": [
+                                    {
+                                        "elmType": "span",
+                                        "txtContent": "Last Updated: ",
+                                        "style": {
+                                            "padding-right": "5px"
+                                        }
+                                    },
+                                    {
+                                        "elmType": "span",
+                                        "txtContent": "=toLocaleDateString([$Modified])",
+                                        "style": {
+                                            "padding-right": "5px",
+                                            "font-weight": "bold"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "display": "=if([$FSObjType] == '1', 'block','none')"
+                        },
+                        "children": [
+                            {
+                                "elmType": "span",
+                                "txtContent": "=if([$ItemChildCount] > 0,'Articles Inside: ', 'Categories Inside: '"
+                            },
+                            {
+                                "elmType": "span",
+                                "txtContent": "=if([$ItemChildCount] > 0, [$ItemChildCount], [$FolderChildCount]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
