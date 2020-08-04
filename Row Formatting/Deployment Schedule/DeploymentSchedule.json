@@ -1,0 +1,972 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideColumnHeader": true,
+    "hideSelection": true,
+    "tileProps": {
+        "height": 250,
+        "width": 600,
+        "hideSelection": true,
+        "formatter": {
+            "elmType": "div",
+            "style": {
+                "width": "90%",
+                "padding-bottom": "5px",
+                "align-items": "start"
+            },
+            "children": [
+                {
+                    "elmType": "div",
+                    "attributes": {
+                        "class": "sp-row-card"
+                    },
+                    "style": {
+                        "border-radius": "7px",
+                        "width": "100%",
+                        "border": "solid 1px #667e99",
+                        "background-color": "#f4f4f4",
+                        "box-shadow": "0px 1.6px 3.6px 0 #667e99, 0px 0.3px 0.9px 0 #667e99",
+                        "flex": "0 0 254",
+                        "overflow": "hidden",
+                        "cursor": "default"
+                    },
+                    "children": [
+                        {
+                            "elmType": "div",
+                            "style": {
+                                "padding": "10px 0",
+                                "width": "99%"
+                            },
+                            "children": [
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "font-size": "15px",
+                                        "width": "100%",
+                                        "flex": "none",
+                                        "display": "flex",
+                                        "flex-direction": "row"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "button",
+                                            "customRowAction": {
+                                                "action": "defaultClick"
+                                            },
+                                            "attributes": {
+                                                "class": "sp-row-title  ms-fontColor-themePrimary",
+                                                "title": "[$Title]"
+                                            },
+                                            "style": {
+                                                "font-size": "20px",
+                                                "border": "none",
+                                                "background-color": "transparent",
+                                                "cursor": "pointer",
+                                                "padding-left": "0",
+                                                "text-align": "left",
+                                                "max-width": "235px",
+                                                "nib-width": "230px"
+                                            },
+                                            "txtContent": "=if(indexOf([$Title] + '^', '^') > 18 ,substring([$Title],0,16) + '...', [$Title]) "
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "flex": "none",
+                                                "display": "flex",
+                                                "flex-direction": "row",
+                                                "flex-wrap": "nowrap",
+                                                "margin-left": "25px",
+                                                "justify-content": "flex-end",
+                                                "margin-bottom": "11px",
+                                                "padding": "1px 10px",
+                                                "border-radius": "12px"
+                                            },
+                                            "attributes": {
+                                                "class": "ms-bgColor-themePrimary ms-bgColor-themeSecondary--hover ms-fontColor-white"
+                                            },
+                                            "txtContent": "[$Application]"
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "flex": "none",
+                                                "display": "flex",
+                                                "flex-direction": "row",
+                                                "flex-wrap": "nowrap",
+                                                "margin-left": "10px",
+                                                "justify-content": "flex-end",
+                                                "margin-bottom": "11px",
+                                                "padding": "1px 10px",
+                                                "border-radius": "12px"
+                                            },
+                                            "attributes": {
+                                                "class": "ms-bgColor-themePrimary ms-bgColor-themeSecondary--hover ms-fontColor-white"
+                                            },
+                                            "txtContent": "[$PackageVersion]"
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "flex": "auto",
+                                                "display": "flex",
+                                                "flex-direction": "row",
+                                                "flex-wrap": "nowrap",
+                                                "justify-content": "flex-end"
+                                            },
+                                            "children": [
+                                                {
+                                                    "elmType": "button",
+                                                    "customRowAction": {
+                                                        "action": "defaultClick"
+                                                    },
+                                                    "attributes": {
+                                                        "title": "See more details",
+                                                        "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                                    },
+                                                    "style": {
+                                                        "border": "none",
+                                                        "background-color": "transparent",
+                                                        "cursor": "pointer"
+                                                    },
+                                                    "children": [
+                                                        {
+                                                            "elmType": "span",
+                                                            "attributes": {
+                                                                "iconName": "GroupedList"
+                                                            },
+                                                            "style": {
+                                                                "font-size": "15px"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "elmType": "button",
+                                                    "customRowAction": {
+                                                        "action": "editProps"
+                                                    },
+                                                    "attributes": {
+                                                        "title": "Edit",
+                                                        "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                                    },
+                                                    "style": {
+                                                        "border": "none",
+                                                        "background-color": "transparent",
+                                                        "cursor": "pointer"
+                                                    },
+                                                    "children": [
+                                                        {
+                                                            "elmType": "span",
+                                                            "attributes": {
+                                                                "iconName": "Edit"
+                                                            },
+                                                            "style": {
+                                                                "font-size": "15px"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "elmType": "button",
+                                                    "customRowAction": {
+                                                        "action": "delete"
+                                                    },
+                                                    "attributes": {
+                                                        "title": "Delete",
+                                                        "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                                                    },
+                                                    "style": {
+                                                        "border": "none",
+                                                        "background-color": "transparent",
+                                                        "cursor": "pointer"
+                                                    },
+                                                    "children": [
+                                                        {
+                                                            "elmType": "span",
+                                                            "attributes": {
+                                                                "iconName": "Delete"
+                                                            },
+                                                            "style": {
+                                                                "font-size": "15px"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "elmType": "button",
+                                                    "customRowAction": {
+                                                        "action": "share"
+                                                    },
+                                                    "attributes": {
+                                                        "title": "Share",
+                                                        "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                                    },
+                                                    "style": {
+                                                        "border": "none",
+                                                        "background-color": "transparent",
+                                                        "cursor": "pointer"
+                                                    },
+                                                    "children": [
+                                                        {
+                                                            "elmType": "span",
+                                                            "attributes": {
+                                                                "iconName": "Share"
+                                                            },
+                                                            "style": {
+                                                                "font-size": "15px"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "font-size": "15px",
+                                        "padding": "10px 0 10px 0",
+                                        "width": "100%",
+                                        "flex": "none",
+                                        "display": "flex",
+                                        "flex-direction": "row",
+                                        "border-top": "1px solid",
+                                        "justify-content": "center"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "80px",
+                                                "height": "80px",
+                                                "padding-right": "5px",
+                                                "border-radius": "50%",
+                                                "border": "5px solid",
+                                                "border-color": "=if(indexOf(toString([$Status]),'QA') > -1 , '#0d6b15',  if([$QADeployment] < @now , '#b00412', if([$QADeployment] == @now, '#ffcd19', '#898484'))",
+                                                "line-height": "80px",
+                                                "text-align": "center",
+                                                "font-size": "1.3em"
+                                            },
+                                            "txtContent": "QA"
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "60px",
+                                                "height": "80px",
+                                                "font-size": "2.5em",
+                                                "padding-right": "5px",
+                                                "line-height": "80px",
+                                                "text-align": "center"
+                                            },
+                                            "attributes": {
+                                                "iconName": "ChromeBackMirrored"
+                                            }
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "80px",
+                                                "height": "80px",
+                                                "padding-right": "5px",
+                                                "border-radius": "50%",
+                                                "border": "5px solid",
+                                                "border-color": "=if(indexOf(toString([$Status]),'UAT') > -1 , '#0d6b15',  if([$UATDeployment] < @now , '#b00412', if([$UATDeployment] == @now, '#ffcd19', '#898484'))",
+                                                "line-height": "80px",
+                                                "text-align": "center",
+                                                "font-size": "1.3em"
+                                            },
+                                            "txtContent": "UAT"
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "60px",
+                                                "height": "80px",
+                                                "font-size": "2.5em",
+                                                "padding-right": "5px",
+                                                "line-height": "80px",
+                                                "text-align": "center"
+                                            },
+                                            "attributes": {
+                                                "iconName": "ChromeBackMirrored"
+                                            }
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "80px",
+                                                "height": "80px",
+                                                "padding-right": "5px",
+                                                "border-radius": "50%",
+                                                "border": "5px solid",
+                                                "border-color": "=if(indexOf(toString([$Status]),'PROD') > -1 , '#0d6b15',  if([$PRODDeployment] < @now , '#b00412', if([$PRODDeployment] == @now, '#ffcd19', '#898484'))",
+                                                "line-height": "80px",
+                                                "text-align": "center",
+                                                "font-size": "1.3em"
+                                            },
+                                            "txtContent": "PROD"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "font-size": "14px",
+                                        "width": "100%",
+                                        "flex": "none",
+                                        "display": "flex",
+                                        "flex-direction": "row",
+                                        "justify-content": "center"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "90px",
+                                                "padding-right": "5px",
+                                                "text-align": "center"
+                                            },
+                                            "txtContent": "[$QADeployment]"
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "60px",
+                                                "padding-right": "5px",
+                                                "line-height": "100px",
+                                                "text-align": "center"
+                                            }
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "90px",
+                                                "padding-right": "5px",
+                                                "text-align": "center"
+                                            },
+                                            "txtContent": "[$UATDeployment]"
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "60px",
+                                                "padding-right": "5px",
+                                                "line-height": "100px",
+                                                "text-align": "center"
+                                            }
+                                        },
+                                        {
+                                            "elmType": "div",
+                                            "style": {
+                                                "width": "90px",
+                                                "padding-right": "5px",
+                                                "text-align": "center"
+                                            },
+                                            "txtContent": "[$PRODDeployment]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "rowFormatter": {
+        "elmType": "div",
+        "style": {
+            "width": "100%",
+            "padding-bottom": "5px",
+            "align-items": "start"
+        },
+        "children": [
+            {
+                "elmType": "div",
+                "attributes": {
+                    "class": "sp-row-card"
+                },
+                "style": {
+                    "border-radius": "7px",
+                    "width": "100%",
+                    "border": "solid 1px #667e99",
+                    "background-color": "#f4f4f4",
+                    "box-shadow": "0px 1.6px 3.6px 0 #667e99, 0px 0.3px 0.9px 0 #667e99",
+                    "flex": "0 0 254",
+                    "overflow": "hidden",
+                    "cursor": "default"
+                },
+                "children": [
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "padding": "10px 0",
+                            "width": "99%"
+                        },
+                        "children": [
+                            {
+                                "elmType": "div",
+                                "style": {
+                                    "font-size": "15px",
+                                    "width": "100%",
+                                    "flex": "none",
+                                    "display": "flex",
+                                    "flex-direction": "row"
+                                },
+                                "children": [
+                                    {
+                                        "elmType": "button",
+                                        "customRowAction": {
+                                            "action": "defaultClick"
+                                        },
+                                        "attributes": {
+                                            "class": "sp-row-title  ms-fontColor-themePrimary",
+                                            "title": "[$Title]"
+                                        },
+                                        "style": {
+                                            "font-size": "20px",
+                                            "border": "none",
+                                            "background-color": "transparent",
+                                            "cursor": "pointer",
+                                            "padding-left": "0",
+                                            "text-align": "left",
+                                            "max-width": "555px",
+                                            "min-width": "230px"
+                                        },
+                                        "txtContent": "[$Title]"
+                                    },
+                                    {
+                                        "elmType": "div",
+                                        "style": {
+                                            "flex": "none",
+                                            "display": "flex",
+                                            "flex-direction": "row",
+                                            "flex-wrap": "nowrap",
+                                            "margin-left": "25px",
+                                            "justify-content": "flex-end",
+                                            "margin-bottom": "11px",
+                                            "padding": "1px 10px",
+                                            "border-radius": "12px"
+                                        },
+                                        "attributes": {
+                                            "class": "ms-bgColor-themePrimary ms-bgColor-themeSecondary--hover ms-fontColor-white"
+                                        },
+                                        "txtContent": "[$Application]"
+                                    },
+                                    {
+                                        "elmType": "div",
+                                        "style": {
+                                            "flex": "none",
+                                            "display": "flex",
+                                            "flex-direction": "row",
+                                            "flex-wrap": "nowrap",
+                                            "margin-left": "10px",
+                                            "justify-content": "flex-end",
+                                            "margin-bottom": "11px",
+                                            "padding": "1px 10px",
+                                            "border-radius": "12px"
+                                        },
+                                        "attributes": {
+                                            "class": "ms-bgColor-themePrimary ms-bgColor-themeSecondary--hover ms-fontColor-white"
+                                        },
+                                        "txtContent": "[$PackageVersion]"
+                                    },
+                                    {
+                                        "elmType": "div",
+                                        "style": {
+                                            "flex": "auto",
+                                            "display": "flex",
+                                            "flex-direction": "row",
+                                            "flex-wrap": "nowrap",
+                                            "justify-content": "flex-end"
+                                        },
+                                        "children": [
+                                            {
+                                                "elmType": "button",
+                                                "customRowAction": {
+                                                    "action": "defaultClick"
+                                                },
+                                                "attributes": {
+                                                    "title": "See more details",
+                                                    "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                                },
+                                                "style": {
+                                                    "border": "none",
+                                                    "background-color": "transparent",
+                                                    "cursor": "pointer"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "span",
+                                                        "attributes": {
+                                                            "iconName": "GroupedList"
+                                                        },
+                                                        "style": {
+                                                            "font-size": "15px"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "elmType": "button",
+                                                "customRowAction": {
+                                                    "action": "editProps"
+                                                },
+                                                "attributes": {
+                                                    "title": "Edit",
+                                                    "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                                },
+                                                "style": {
+                                                    "border": "none",
+                                                    "background-color": "transparent",
+                                                    "cursor": "pointer"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "span",
+                                                        "attributes": {
+                                                            "iconName": "Edit"
+                                                        },
+                                                        "style": {
+                                                            "font-size": "15px"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "elmType": "button",
+                                                "customRowAction": {
+                                                    "action": "delete"
+                                                },
+                                                "attributes": {
+                                                    "title": "Delete",
+                                                    "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                                                },
+                                                "style": {
+                                                    "border": "none",
+                                                    "background-color": "transparent",
+                                                    "cursor": "pointer"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "span",
+                                                        "attributes": {
+                                                            "iconName": "Delete"
+                                                        },
+                                                        "style": {
+                                                            "font-size": "15px"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "elmType": "button",
+                                                "customRowAction": {
+                                                    "action": "share"
+                                                },
+                                                "attributes": {
+                                                    "title": "Share",
+                                                    "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                                },
+                                                "style": {
+                                                    "border": "none",
+                                                    "background-color": "transparent",
+                                                    "cursor": "pointer"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "span",
+                                                        "attributes": {
+                                                            "iconName": "Share"
+                                                        },
+                                                        "style": {
+                                                            "font-size": "15px"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "elmType": "div",
+                                "style": {
+                                    "width": "100%",
+                                    "border-top": "1px solid",
+                                    "padding-top": "20px",
+                                    "display": "flex",
+                                    "justify-content": "center"
+                                },
+                                "children": [
+                                    {
+                                        "elmType": "div",
+                                        "style": {
+                                            "width": "25%",
+                                            "display": "flex",
+                                            "flex-direction": "row"
+                                        },
+                                        "children": [
+                                            {
+                                                "elmType": "div",
+                                                "style": {
+                                                    "border": "solid",
+                                                    "border-color": "=if(indexOf(toString([$Status]),'QA') > -1 , '#0d6b15',  if([$QADeployment] < @now , '#b00412', if([$QADeployment] == @now, '#ffcd19', '#898484'))",
+                                                    "border-width": "5px 0 5px 5px",
+                                                    "margin": "15px -44px 4px 0",
+                                                    "width": "60%",
+                                                    "float": "left",
+                                                    "height": "112px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "div",
+                                                        "children": [
+                                                            {
+                                                                "elmType": "span",
+                                                                "txtContent": "QA Deployment",
+                                                                "style": {
+                                                                    "font-size": "20px",
+                                                                    "font-weight": "bold",
+                                                                    "display": "flex",
+                                                                    "justify-content": "center"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "elmType": "div",
+                                                        "style": {
+                                                            "font-size": "14px",
+                                                            "padding": "10px 0 0 10px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "elmType": "span",
+                                                                "attributes": {
+                                                                    "iconName": "Calendar"
+                                                                },
+                                                                "style": {
+                                                                    "font-weight": "bold",
+                                                                    "padding-right": "10px"
+                                                                }
+                                                            },
+                                                            {
+                                                                "elmType": "span",
+                                                                "txtContent": "=toLocaleString([$QADeployment])"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "elmType": "div",
+                                                        "style": {
+                                                            "font-size": "14px",
+                                                            "padding": "2px 0 0 10px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "elmType": "div",
+                                                                "style": {
+                                                                    "width": "100%",
+                                                                    "margin-top": "5px"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "elmType": "span",
+                                                                        "style": {
+                                                                            "padding-right": "10px",
+                                                                            "font-weight": "bold"
+                                                                        },
+                                                                        "attributes": {
+                                                                            "iconName": "SyncOccurence"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "elmType": "span",
+                                                                        "txtContent": "[$QADeploymentSprint]",
+                                                                        "style": {
+                                                                            "font-weight": "bold",
+                                                                            "padding-right": "10px"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "elmType": "img",
+                                                                        "style": {
+                                                                            "width": "32px",
+                                                                            "border-radius": "50%",
+                                                                            "float": "right"
+                                                                        },
+                                                                        "attributes": {
+                                                                            "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$Responsible.email] + '&UA=0&size=HR32x32'",
+                                                                            "title": "[$Responsible.title]"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "elmType": "span",
+                                                "attributes": {
+                                                    "iconName": "ChevronRightMed"
+                                                },
+                                                "style": {
+                                                    "font-size": "150px",
+                                                    "color": "=if(indexOf(toString([$Status]),'QA') > -1 , '#0d6b15',  if([$QADeployment] < @now , '#b00412', if([$QADeployment] == @now, '#ffcd19', '#898484'))"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "elmType": "div",
+                                        "style": {
+                                            "width": "25%",
+                                            "display": "flex",
+                                            "flex-direction": "row"
+                                        },
+                                        "children": [
+                                            {
+                                                "elmType": "div",
+                                                "style": {
+                                                    "border": "solid",
+                                                    "border-color": "=if(indexOf(toString([$Status]),'UAT') > -1 , '#0d6b15',  if([$UATDeployment] < @now , '#b00412', if([$UATDeployment] == @now, '#ffcd19', '#898484'))",
+                                                    "border-width": "5px 0 5px 5px",
+                                                    "margin": "15px -44px 4px 0",
+                                                    "width": "60%",
+                                                    "float": "left",
+                                                    "height": "112px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "div",
+                                                        "children": [
+                                                            {
+                                                                "elmType": "span",
+                                                                "txtContent": "UAT Deployment",
+                                                                "style": {
+                                                                    "font-size": "20px",
+                                                                    "font-weight": "bold",
+                                                                    "display": "flex",
+                                                                    "justify-content": "center"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "elmType": "div",
+                                                        "style": {
+                                                            "font-size": "14px",
+                                                            "padding": "10px 0 0 10px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "elmType": "span",
+                                                                "attributes": {
+                                                                    "iconName": "Calendar"
+                                                                },
+                                                                "style": {
+                                                                    "font-weight": "bold",
+                                                                    "padding-right": "10px"
+                                                                }
+                                                            },
+                                                            {
+                                                                "elmType": "span",
+                                                                "txtContent": "=toLocaleString([$UATDeployment])"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "elmType": "div",
+                                                        "style": {
+                                                            "font-size": "14px",
+                                                            "padding": "2px 0 0 10px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "elmType": "div",
+                                                                "style": {
+                                                                    "width": "100%",
+                                                                    "margin-top": "5px"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "elmType": "span",
+                                                                        "style": {
+                                                                            "padding-right": "10px",
+                                                                            "font-weight": "bold"
+                                                                        },
+                                                                        "attributes": {
+                                                                            "iconName": "SyncOccurence"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "elmType": "span",
+                                                                        "txtContent": "[$UATDeploymentSprint]",
+                                                                        "style": {
+                                                                            "font-weight": "bold",
+                                                                            "padding-right": "10px"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "elmType": "img",
+                                                                        "style": {
+                                                                            "width": "32px",
+                                                                            "border-radius": "50%",
+                                                                            "float": "right"
+                                                                        },
+                                                                        "attributes": {
+                                                                            "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$Responsible.email] + '&UA=0&size=HR32x32'",
+                                                                            "title": "[$Responsible.title]"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "elmType": "span",
+                                                "attributes": {
+                                                    "iconName": "ChevronRightMed"
+                                                },
+                                                "style": {
+                                                    "font-size": "150px",
+                                                    "color": "=if(indexOf(toString([$Status]),'UAT') > -1 , '#0d6b15',  if([$UATDeployment] < @now , '#b00412', if([$UATDeployment] == @now, '#ffcd19', '#898484'))"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "elmType": "div",
+                                        "style": {
+                                            "width": "25%",
+                                            "display": "flex",
+                                            "flex-direction": "row"
+                                        },
+                                        "children": [
+                                            {
+                                                "elmType": "div",
+                                                "style": {
+                                                    "border": "solid",
+                                                    "border-color": "=if(indexOf(toString([$Status]),'PROD') > -1 , '#0d6b15',  if([$PRODDeployment] < @now , '#b00412', if([$PRODDeployment] == @now, '#ffcd19', '#898484'))",
+                                                    "border-width": "5px 0 5px 5px",
+                                                    "margin": "15px -44px 4px 0",
+                                                    "width": "60%",
+                                                    "float": "left",
+                                                    "height": "112px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "elmType": "div",
+                                                        "children": [
+                                                            {
+                                                                "elmType": "span",
+                                                                "txtContent": "PROD Deployment",
+                                                                "style": {
+                                                                    "font-size": "20px",
+                                                                    "font-weight": "bold",
+                                                                    "display": "flex",
+                                                                    "justify-content": "center"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "elmType": "div",
+                                                        "style": {
+                                                            "font-size": "14px",
+                                                            "padding": "10px 0 0 10px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "elmType": "span",
+                                                                "attributes": {
+                                                                    "iconName": "Calendar"
+                                                                },
+                                                                "style": {
+                                                                    "font-weight": "bold",
+                                                                    "padding-right": "10px"
+                                                                }
+                                                            },
+                                                            {
+                                                                "elmType": "span",
+                                                                "txtContent": "=toLocaleString([$PRODDeployment])"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "elmType": "div",
+                                                        "style": {
+                                                            "font-size": "14px",
+                                                            "padding": "2px 0 0 10px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "elmType": "div",
+                                                                "style": {
+                                                                    "width": "100%",
+                                                                    "margin-top": "5px"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "elmType": "span",
+                                                                        "style": {
+                                                                            "padding-right": "10px",
+                                                                            "font-weight": "bold"
+                                                                        },
+                                                                        "attributes": {
+                                                                            "iconName": "SyncOccurence"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "elmType": "span",
+                                                                        "txtContent": "[$PRODDeploymentSprint]",
+                                                                        "style": {
+                                                                            "font-weight": "bold",
+                                                                            "padding-right": "10px"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "elmType": "img",
+                                                                        "style": {
+                                                                            "width": "32px",
+                                                                            "border-radius": "50%",
+                                                                            "float": "right"
+                                                                        },
+                                                                        "attributes": {
+                                                                            "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$Responsible.email] + '&UA=0&size=HR32x32'",
+                                                                            "title": "[$Responsible.title]"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "elmType": "span",
+                                                "attributes": {
+                                                    "iconName": "ChevronRightMed"
+                                                },
+                                                "style": {
+                                                    "font-size": "150px",
+                                                    "color": "=if(indexOf(toString([$Status]),'PROD') > -1 , '#0d6b15',  if([$PRODDeployment] < @now , '#b00412', if([$PRODDeployment] == @now, '#ffcd19', '#898484'))"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
