@@ -38,6 +38,7 @@ Following columns will be required in the list and in the view
 | UATDeploymentSprint  | Choice               |
 | PRODDeploymentSprint | Choice               |
 
+- Status Field Values: `Deployed on QA`, `Deployed on UAT`, `Deployed on PROD` 
 
 ## Sample
 
