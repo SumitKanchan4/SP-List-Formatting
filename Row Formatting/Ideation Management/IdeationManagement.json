@@ -1,0 +1,316 @@
+    {
+        "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+        "hideSelection": true,
+        "hideColumnHeader": true,
+        "rowFormatter": {
+            "elmType": "div",
+            "style": {
+                "width": "100%",
+                "align-items": "start"
+            },
+            "children": [
+                {
+                    "elmType": "div",
+                    "attributes": {
+                        "class": "sp-row-card"
+                    },
+                    "style": {
+                        "width": "100%",
+                        "border-radius": "10px",
+                        "border": "solid 1px #667e99",
+                        "box-shadow": "0px 1.6px 3.6px 0 #667e99, 0px 0.3px 0.9px 0 #667e99"
+                    },
+                    "children": [
+                        {
+                            "elmType": "div",
+                            "style": {
+                                "border-bottom": "1px solid"
+                            },
+                            "children": [
+                                {
+                                    "elmType": "a",
+                                    "attributes": {
+                                        "iconName": "=if([$Stage] == 'Idea', 'Insights' , if([$Stage] == 'Planning', 'PlanView', if([$Stage] == 'Implementation', 'DeveloperTools', if([$Stage] == 'Completed', 'CompletedSolid', 'StatusErrorFull') )))",
+                                        "title": "=if([$Stage] == 'Idea', 'Idea' , if([$Stage] == 'Planning', 'Planning', if([$Stage] == 'Implementation', 'Implementation', if([$Stage] == 'Completed', 'Completed', 'Rejected') )))",
+                                        "href": "= '?&FilterField1=Stage&FilterValue1=' + [$Stage] + '&FilterType1=Choice&FilterDisplay1=Stage%3A' + [$Stage]",
+                                        "class": "ms-fontColor-themePrimary"
+                                    },
+                                    "style": {
+                                        "text-decoration": "none",
+                                        "cursor": "pointer",
+                                        "font-size": "18px",
+                                        "padding-right": "10px",
+                                        "color": "=if([$Stage] == 'Completed', '#0d6b15' , if([$Stage] == 'Rejected', '#ff0000', ''))"
+                                    }
+                                },
+                                {
+                                    "elmType": "button",
+                                    "customRowAction": {
+                                        "action": "defaultClick"
+                                    },
+                                    "attributes": {
+                                        "class": "sp-row-title  ms-fontColor-themePrimary",
+                                        "title": "[$Title]"
+                                    },
+                                    "style": {
+                                        "font-size": "20px",
+                                        "border": "none",
+                                        "background-color": "transparent",
+                                        "cursor": "pointer",
+                                        "padding-left": "0",
+                                        "text-align": "left"
+                                    },
+                                    "txtContent": "=if(@window.innerWidth > indexOf([$Title]+ '^', '^') * 12,[$Title], substring([$Title],0, (indexOf([$Title]+ '^', '^') - ((indexOf([$Title]+ '^', '^')*13 - @window.innerWidth) / 13))) + '...')"
+                                },
+                                {
+                                    "elmType": "span",
+                                    "attributes": {
+                                        "iconName": "Medal",
+                                        "class": "sp-row-title  ms-fontColor-themePrimary",
+                                        "title": "Medal awarded for the idea"
+                                    },
+                                    "style":{
+                                        "display": "=if([$AssignMedal],'','none')",
+                                        "border-left": "1px solid #dbd6d6",
+                                        "padding-left": "5px",
+                                        "font-size": "20px",
+                                        "font-weight": "normal"
+                                    }
+                                },
+                                {
+                                    "elmType": "img",
+                                    "defaultHoverField": "[$Submitter]",
+                                    "style": {
+                                        "width": "32px",
+                                        "border-radius": "50%",
+                                        "float": "right"
+                                    },
+                                    "attributes": {
+                                        "src": "= @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountname=' + [$Submitter.email] + '&UA=0&size=HR32x32'",
+                                        "title": "[$Submitter.title]"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "elmType": "div",
+                            "style": {
+                                "width": "100%",
+                                "display": "flex",
+                                "padding-top": "10px",
+                                "padding-bottom": "10px"
+                            },
+                            "children": [
+                                {
+                                    "elmType": "div",
+                                    "txtContent": "[$Description]",
+                                    "style": {
+                                        "width": "100%",
+                                        "align-itmes": "flex-start",
+                                        "flex-direction": "row",
+                                        "display": "flex"
+                                    }
+                                },
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "flex": "auto",
+                                        "display": "flex",
+                                        "flex-direction": "column",
+                                        "flex-wrap": "nowrap",
+                                        "align-itmes": "flex-end",
+                                        "justify-content": "flex-start"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "button",
+                                            "customRowAction": {
+                                                "action": "defaultClick"
+                                            },
+                                            "attributes": {
+                                                "title": "See more details",
+                                                "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                            },
+                                            "style": {
+                                                "border": "none",
+                                                "background-color": "transparent",
+                                                "cursor": "pointer"
+                                            },
+                                            "children": [
+                                                {
+                                                    "elmType": "span",
+                                                    "attributes": {
+                                                        "iconName": "GroupedList"
+                                                    },
+                                                    "style": {
+                                                        "font-size": "15px",
+                                                        "padding-bottom": "5px"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "elmType": "button",
+                                            "customRowAction": {
+                                                "action": "editProps"
+                                            },
+                                            "attributes": {
+                                                "title": "Edit",
+                                                "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                            },
+                                            "style": {
+                                                "border": "none",
+                                                "background-color": "transparent",
+                                                "cursor": "pointer"
+                                            },
+                                            "children": [
+                                                {
+                                                    "elmType": "span",
+                                                    "attributes": {
+                                                        "iconName": "Edit"
+                                                    },
+                                                    "style": {
+                                                        "font-size": "15px",
+                                                        "padding-bottom": "5px"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "elmType": "button",
+                                            "customRowAction": {
+                                                "action": "delete"
+                                            },
+                                            "attributes": {
+                                                "title": "Delete",
+                                                "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                                            },
+                                            "style": {
+                                                "border": "none",
+                                                "background-color": "transparent",
+                                                "cursor": "pointer"
+                                            },
+                                            "children": [
+                                                {
+                                                    "elmType": "span",
+                                                    "attributes": {
+                                                        "iconName": "Delete"
+                                                    },
+                                                    "style": {
+                                                        "font-size": "15px",
+                                                        "padding-bottom": "5px"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "elmType": "button",
+                                            "customRowAction": {
+                                                "action": "share"
+                                            },
+                                            "attributes": {
+                                                "title": "Share",
+                                                "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                                            },
+                                            "style": {
+                                                "border": "none",
+                                                "background-color": "transparent",
+                                                "cursor": "pointer"
+                                            },
+                                            "children": [
+                                                {
+                                                    "elmType": "span",
+                                                    "attributes": {
+                                                        "iconName": "Share"
+                                                    },
+                                                    "style": {
+                                                        "font-size": "15px",
+                                                        "padding-bottom": "5px"
+                                                    }
+                                                }
+                                            ]
+                                        }                                        
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "elmType": "div",
+                            "style": {
+                                "width": "100%",
+                                "display": "flex",
+                                "flex-direction": "row",
+                                "padding-top": "5px",
+                                "border-top": "1px solid #dbd6d6"
+                            },
+                            "children": [
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "width": "25%",
+                                        "font-weight": "bold"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "span",
+                                            "txtContent": "Estimated Budget: "
+                                        },
+                                        {
+                                            "elmType": "span",
+                                            "txtContent": "='₹' + [$BudgetCost]",
+                                            "style": {
+                                                "color": "#ff0000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "width": "25%",
+                                        "font-weight": "bold"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "span",
+                                            "txtContent": "Estimated Benefit: "
+                                        },
+                                        {
+                                            "elmType": "span",
+                                            "txtContent": "='₹' + [$BenefitEstimate]",
+                                            "style": {
+                                                "color": "#008000"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "elmType": "div",
+                                    "style": {
+                                        "width": "25%",
+                                        "font-weight": "bold"
+                                    },
+                                    "children": [
+                                        {
+                                            "elmType": "span",
+                                            "txtContent": "Risk: "
+                                        },
+                                        {
+                                            "elmType": "span",
+                                            "txtContent": "[$RiskRating]",
+                                            "style": {
+                                                "background-color": "=if([$RiskRating] == 'Low','#008000', if([$RiskRating] == 'Medium','#fc8d36', if([$RiskRating] == 'High','#ff0000','#b22b2b' )))",
+                                                "padding": "2px 5px",
+                                                "border-radius": "5px",
+                                                "color": "white"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
