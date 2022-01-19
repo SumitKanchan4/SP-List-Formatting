@@ -1,0 +1,5 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "txtContent": "= if(getDate(@currentField) <= 9, '0' + getDate(@currentField), getDate(@currentField)) + ' ' + if(getMonth(@currentField) == 0, 'January', if(getMonth(@currentField) == 1, 'February',if(getMonth(@currentField) == 2, 'March',if(getMonth(@currentField) == 3, 'April',if(getMonth(@currentField) == 4, 'May',if(getMonth(@currentField) == 5, 'June',if(getMonth(@currentField) == 6, 'July',if(getMonth(@currentField) == 7, 'August',if(getMonth(@currentField) == 8, 'September',if(getMonth(@currentField) == 9, 'October',if(getMonth(@currentField) == 10, 'November','December'))))))))))) + ' ' + getYear(@currentField)"
+}
