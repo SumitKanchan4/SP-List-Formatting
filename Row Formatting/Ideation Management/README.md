@@ -37,7 +37,7 @@ Following columns will be required in the list and in the view
 - Stage Field Values: `Idea`, `Implementation`, `Completed`, `Rejected` 
 - Risk Field Values: `Low`, `Medium`, `High`, `Critical` 
 
-## Sample
+## About
 
 | Version | Date        | Author        |
 |---------|-------------|---------------|

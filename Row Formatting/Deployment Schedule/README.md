@@ -25,7 +25,7 @@ It has got two views
 Following columns will be required in the list and in the view
 
 | Column Name          | Column Type          |
-|----------------------|----------------------|
+| -------------------- | -------------------- |
 | Title                | Single line of text  |
 | Application          | Choice               |
 | PackageVersion       | Single lines of text |
@@ -42,9 +42,9 @@ Following columns will be required in the list and in the view
 
 ## Sample
 
-| Version | Date | Author|
-|-----|-----|-----|
-|1.0|03 Aug 2020 | Sumit Kanchan |
+| Version | Date        | Author        |
+| ------- | ----------- | ------------- |
+| 1.0     | 03 Aug 2020 | Sumit Kanchan |
 
 ## Disclaimer
 

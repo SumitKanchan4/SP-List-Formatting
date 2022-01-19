@@ -29,7 +29,7 @@ Following columns will be required in the view
 | Modified       | DateTime               |
 
 
-## Sample
+## About
 
 | Version | Date | Author|
 |-----|-----|-----|

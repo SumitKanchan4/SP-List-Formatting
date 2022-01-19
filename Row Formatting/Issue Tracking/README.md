@@ -27,7 +27,7 @@ Following columns will be required in the list and in the view
 | Created          | DateTime               |
 
 
-## Sample
+## About
 
 | Version | Date | Author|
 |-----|-----|-----|
