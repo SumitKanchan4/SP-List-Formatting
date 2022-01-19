@@ -1,0 +1,22 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+        "padding": "5px"
+    },
+    "children": [
+        {
+            "elmType": "span",
+            "attributes": {
+                "iconName": "= if(@currentField, 'CompletedSolid', 'Blocked2Solid'",
+                "title": "= if(@currentField, 'Yes', 'No'"
+            },
+            "style": {
+                "color": "= if(@currentField, '#26ba26', '#ff3c3c'",
+                "margin-left": "auto",
+                "margin-right": "auto",
+                "font-size": "large"
+            }
+        }
+    ]
+}
