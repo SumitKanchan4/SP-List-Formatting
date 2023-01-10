@@ -40,7 +40,7 @@ Following columns will be required in the list and in the view
 
 - Status Field Values: `Deployed on QA`, `Deployed on UAT`, `Deployed on PROD` 
 
-## Sample
+## About
 
 | Version | Date        | Author        |
 | ------- | ----------- | ------------- |

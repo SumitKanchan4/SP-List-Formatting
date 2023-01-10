@@ -1,0 +1,242 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+    "hideColumnHeader": true,
+    "rowFormatter": {
+      "elmType": "div",
+      "style": {
+        "width": "100%",
+        "align-items": "start"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "width": "100%",
+            "padding": "10px"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "min-width": "150px",
+                "float": "left",
+                "padding-right": "10px",
+                "line-height": "20px",
+                "font-weight": "600"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "txtContent": "= [$Title]",
+                  "style": {
+                    "font-size": "15px",
+                    "color": "Black"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "txtContent": "",
+              "style": {
+                "border": "1px dashed #ebebeb",
+                "width": "80px",
+                "margin": "auto",
+                "margin-top": "10px",
+                "margin-bottom": "5px",
+                "float": "left"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "float": "left",
+                "padding": "0 20px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "AnalyticsLogo",
+                    "title": "= 'Analysis ' + if([$Status] == 'Not Started', 'Not Started' , if([$Status] == 'Analysis', 'In-Progress', 'Completed'))"
+                  },
+                  "style": {
+                    "font-size": "20px",
+                    "color": "=if([$Status] == 'Not Started', '#9f9d98' , if([$Status] == 'Analysis', '#FFBF00', '#498205'))"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Analysis",
+                  "style": {
+                    "font-size": "10px",
+                    "font-weight": "500"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "txtContent": "",
+              "style": {
+                "border": "1px dashed #ebebeb",
+                "width": "80px",
+                "margin": "auto",
+                "margin-top": "10px",
+                "margin-bottom": "5px",
+                "float": "left"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "float": "left",
+                "padding": "0 20px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "DeveloperTools",
+                    "title": "= 'Dvelopment ' + if([$Status] == 'Not Started' || [$Status] == 'Analysis', 'Not Started' , if([$Status] == 'Development', 'In-Progress', 'Completed'))"
+                  },
+                  "style": {
+                    "font-size": "20px",
+                    "color": "=if([$Status] == 'Not Started' || [$Status] == 'Analysis', '#9f9d98' , if([$Status] == 'Development', '#FFBF00', '#498205'))"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Development",
+                  "style": {
+                    "font-size": "10px",
+                    "font-weight": "500"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "txtContent": "",
+              "style": {
+                "border": "1px dashed #ebebeb",
+                "width": "80px",
+                "margin": "auto",
+                "margin-top": "10px",
+                "margin-bottom": "5px",
+                "float": "left"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "float": "left",
+                "padding": "0 20px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "TestBeakerSolid",
+                    "title": "= 'UAT ' + if([$Status] == 'Not Started' || [$Status] == 'Analysis' || [$Status] == 'Development', 'Not Started' , if([$Status] == 'UAT', 'In-Progress', 'Completed'))"
+                  },
+                  "style": {
+                    "font-size": "20px",
+                    "color": "=if([$Status] == 'Not Started' || [$Status] == 'Analysis' || [$Status] == 'Development', '#9f9d98' , if([$Status] == 'UAT', '#FFBF00', '#498205'))"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "UAT",
+                  "style": {
+                    "font-size": "10px",
+                    "font-weight": "500"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "txtContent": "",
+              "style": {
+                "border": "1px dashed #ebebeb",
+                "width": "80px",
+                "margin": "auto",
+                "margin-top": "10px",
+                "margin-bottom": "5px",
+                "float": "left"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "float": "left",
+                "padding": "0 20px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "Deploy",
+                    "title": "= 'Deployment ' + if([$Status] == 'Not Started' || [$Status] == 'Analysis' || [$Status] == 'Development' || [$Status] == 'UAT', 'Not Started' , if([$Status] == 'Deployment', 'In-Progress', 'Completed'))"
+                  },
+                  "style": {
+                    "font-size": "20px",
+                    "color": "=if([$Status] == 'Not Started' || [$Status] == 'Analysis' || [$Status] == 'Development' || [$Status] == 'UAT', '#9f9d98' , if([$Status] == 'Deployment', '#FFBF00', '#498205'))"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Deployment",
+                  "style": {
+                    "font-size": "10px",
+                    "font-weight": "500"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "txtContent": "",
+              "style": {
+                "border": "1px dashed #ebebeb",
+                "width": "80px",
+                "margin": "auto",
+                "margin-top": "10px",
+                "margin-bottom": "5px",
+                "float": "left"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "float": "left",
+                "padding": "0 20px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "Product",
+                    "title": "=if([$Status] == 'Not Started' || [$Status] == 'Analysis' || [$Status] == 'Development' || [$Status] == 'UAT' || [$Status] == 'Deployment', 'Not Started' , 'Completed')"
+                  },
+                  "style": {
+                    "font-size": "20px",
+                    "color": "=if([$Status] == 'Not Started' || [$Status] == 'Analysis' || [$Status] == 'Development' || [$Status] == 'UAT' || [$Status] == 'Deployment', '#9f9d98' , '#498205')"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "GO-LIVE",
+                  "style": {
+                    "font-size": "10px",
+                    "font-weight": "500"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
