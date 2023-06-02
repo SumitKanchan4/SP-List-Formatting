@@ -1,0 +1,1027 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+    "hideColumnHeader": true,
+    "hideSelection": true,
+    "rowFormatter": {
+      "elmType": "div",
+      "attributes": {
+        "class": "sp-row-card"
+      },
+      "style": {
+        "display": "flex",
+        "border-radius": "10px"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "width": "70%",
+            "display": "flex",
+            "flex-direction": "column"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "border-bottom": "2px solid #007F00"
+              },
+              "children": [
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "defaultClick"
+                  },
+                  "txtContent": "= '#' + [$ID] + '. ' + [$Title]",
+                  "attributes": {
+                    "class": "sp-row-title",
+                    "title": "= 'Project: ' + [$Title]"
+                  },
+                  "style": {
+                    "background-color": "transparent",
+                    "border": "0 transparent",
+                    "cursor": "pointer",
+                    "color": "#007F00"
+                  }
+                },
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "editProps"
+                  },
+                  "attributes": {
+                    "title": "Edit Project"
+                  },
+                  "style": {
+                    "background-color": "transparent",
+                    "border": "0 transparent",
+                    "cursor": "pointer",
+                    "color": "#007F00"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "EditSolid12"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "button",
+                  "customRowAction": {
+                    "action": "delete"
+                  },
+                  "attributes": {
+                    "title": "Delete Project"
+                  },
+                  "style": {
+                    "background-color": "transparent",
+                    "border": "0 transparent",
+                    "cursor": "pointer",
+                    "color": "#007F00"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "Delete"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "a",
+                  "attributes": {
+                    "title": "Project Folder",
+                    "target": "_blank",
+                    "href": "#",
+                    "iconName": "FabricFolderFill"
+                  },
+                  "style": {
+                    "text-decoration": "none",
+                    "cursor": "pointer",
+                    "color": "#007F00",
+                    "font-size": "18px",
+                    "margin-top": "8px",
+                    "margin-left": "5px"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "margin": "10px 0"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "30%"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "Projected Start Date:",
+                      "style": {
+                        "color": "#007F00",
+                        "font-weight": "600",
+                        "white-space": "break-spaces"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "=toDateString([$ProjectedStartDate])",
+                      "style": {
+                        "color": "black",
+                        "margin-left": "5px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "30%"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "Estimated Effort:",
+                      "style": {
+                        "color": "#007F00",
+                        "font-weight": "600",
+                        "white-space": "break-spaces"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "= [$EstimatedEfforts] + ' hrs'",
+                      "style": {
+                        "color": "black",
+                        "margin-left": "5px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "30%"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "Projected Resources:",
+                      "style": {
+                        "color": "#007F00",
+                        "font-weight": "600",
+                        "white-space": "break-spaces"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$ResourceCount]",
+                      "style": {
+                        "color": "black",
+                        "margin-left": "5px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "People",
+                    "title": "View Aligned Resources"
+                  },
+                  "txtContent": "  Resources",
+                  "style": {
+                    "cursor": "pointer",
+                    "color": "#007F00"
+                  },
+                  "customCardProps": {
+                    "openOnEvent": "click",
+                    "isBeakVisible": true,
+                    "formatter": {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "flex-direction": "column",
+                        "align-items": "start",
+                        "min-height": "1.5em"
+                      },
+                      "children": [
+                        {
+                          "elmType": "span",
+                          "txtContent": "Technical Architect",
+                          "style": {
+                            "font-size": "1.2em",
+                            "color": "#007F00",
+                            "padding-bottom": "1px",
+                            "border-bottom": "2px solid #007F00",
+                            "width": "100%",
+                            "margin-bottom": "10px",
+                            "font-weight": "500",
+                            "display": "= if(indexOf([$TechnicalArchitect.email] + '^', '^') == 0 , 'none','flex')"
+                          }
+                        },
+                        {
+                          "elmType": "div",
+                          "style": {
+                            "flex-direction": "row",
+                            "justify-content": "flex-start",
+                            "padding-bottom": "0.5em",
+                            "display": "= if(indexOf([$TechnicalArchitect.email] + '^', '^') == 0 , 'none','flex')"
+                          },
+                          "children": [
+                            {
+                              "elmType": "img",
+                              "attributes": {
+                                "src": "=getUserImage([$TechnicalArchitect.email], 'S')"
+                              },
+                              "style": {
+                                "width": "3em",
+                                "height": "3em",
+                                "border-radius": "3em"
+                              }
+                            },
+                            {
+                              "elmType": "div",
+                              "style": {
+                                "margin-left": "0.5em"
+                              },
+                              "children": [
+                                {
+                                  "elmType": "div",
+                                  "txtContent": "[$TechnicalArchitect.title]",
+                                  "style": {
+                                    "font-size": "1em"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "txtContent": "[$TechnicalArchitect.email]",
+                                  "style": {
+                                    "color": "gray",
+                                    "font-size": "0.8em"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "elmType": "span",
+                          "txtContent": "Business Analyst (BA)",
+                          "style": {
+                            "font-size": "1.2em",
+                            "color": "#007F00",
+                            "padding-bottom": "1px",
+                            "border-bottom": "2px solid #007F00",
+                            "width": "100%",
+                            "margin-bottom": "10px",
+                            "font-weight": "500",
+                            "display": "= if(indexOf([$BA.email] + '^', '^') == 0 , 'none','flex')"
+                          }
+                        },
+                        {
+                          "elmType": "div",
+                          "style": {
+                            "flex-direction": "row",
+                            "justify-content": "flex-start",
+                            "padding-bottom": "0.5em",
+                            "display": "= if(indexOf([$BA.email] + '^', '^') == 0 , 'none','flex')"
+                          },
+                          "children": [
+                            {
+                              "elmType": "img",
+                              "attributes": {
+                                "src": "=getUserImage([$BA.email], 'S')"
+                              },
+                              "style": {
+                                "width": "3em",
+                                "height": "3em",
+                                "border-radius": "3em"
+                              }
+                            },
+                            {
+                              "elmType": "div",
+                              "style": {
+                                "margin-left": "0.5em"
+                              },
+                              "children": [
+                                {
+                                  "elmType": "div",
+                                  "txtContent": "[$BA.title]",
+                                  "style": {
+                                    "font-size": "1em"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "txtContent": "[$BA.email]",
+                                  "style": {
+                                    "color": "gray",
+                                    "font-size": "0.8em"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "elmType": "span",
+                          "txtContent": "Developers",
+                          "style": {
+                            "font-size": "1.2em",
+                            "color": "#007F00",
+                            "padding-bottom": "1px",
+                            "border-bottom": "2px solid #007F00",
+                            "width": "100%",
+                            "margin-bottom": "10px",
+                            "font-weight": "500",
+                            "display": "= if(indexOf([$Developers.email] + '^', '^') == 0 , 'none','flex')"
+                          }
+                        },
+                        {
+                          "elmType": "span",
+                          "forEach": "resource in [$Developers]",
+                          "style": {
+                            "justify-content": "flex-start",
+                            "margin-top": "=if(loopIndex('resource') == 0, '0em', '0.5em')",
+                            "padding-bottom": "0.5em",
+                            "flex-direction": "column",
+                            "border-bottom": "= if(loopIndex('resource') < Number(length([$Developers]) - 1), '1px solid lightgray','0px')",
+                            "width": "100%",
+                            "display": "= if(indexOf([$Developers.email] + '^', '^') == 0 , 'none','flex')"
+                          },
+                          "children": [
+                            {
+                              "elmType": "div",
+                              "style": {
+                                "display": "flex",
+                                "flex-direction": "row",
+                                "justify-content": "flex-start"
+                              },
+                              "children": [
+                                {
+                                  "elmType": "img",
+                                  "attributes": {
+                                    "src": "=getUserImage([$resource.email], 'S')"
+                                  },
+                                  "style": {
+                                    "width": "3em",
+                                    "height": "3em",
+                                    "border-radius": "3em"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "style": {
+                                    "margin-left": "0.5em"
+                                  },
+                                  "children": [
+                                    {
+                                      "elmType": "div",
+                                      "txtContent": "[$resource.title]",
+                                      "style": {
+                                        "font-size": "1em"
+                                      }
+                                    },
+                                    {
+                                      "elmType": "div",
+                                      "txtContent": "[$resource.email]",
+                                      "style": {
+                                        "color": "gray",
+                                        "font-size": "0.8em"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "elmType": "span",
+                          "txtContent": "QA",
+                          "style": {
+                            "font-size": "1.2em",
+                            "color": "#007F00",
+                            "padding-bottom": "1px",
+                            "border-bottom": "2px solid #007F00",
+                            "width": "100%",
+                            "margin-bottom": "10px",
+                            "font-weight": "500"
+                          }
+                        },
+                        {
+                          "elmType": "span",
+                          "forEach": "resource in [$Tester]",
+                          "style": {
+                            "justify-content": "flex-start",
+                            "padding-bottom": "0.5em",
+                            "flex-direction": "column",
+                            "border-bottom": "1px solid lightgray",
+                            "width": "100%"
+                          },
+                          "children": [
+                            {
+                              "elmType": "div",
+                              "style": {
+                                "display": "flex",
+                                "flex-direction": "row",
+                                "justify-content": "flex-start"
+                              },
+                              "children": [
+                                {
+                                  "elmType": "img",
+                                  "attributes": {
+                                    "src": "=getUserImage([$resource.email], 'S')"
+                                  },
+                                  "style": {
+                                    "width": "3em",
+                                    "height": "3em",
+                                    "border-radius": "3em"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "style": {
+                                    "margin-left": "0.5em"
+                                  },
+                                  "children": [
+                                    {
+                                      "elmType": "div",
+                                      "txtContent": "[$resource.title]",
+                                      "style": {
+                                        "font-size": "1em"
+                                      }
+                                    },
+                                    {
+                                      "elmType": "div",
+                                      "txtContent": "[$resource.email]",
+                                      "style": {
+                                        "color": "gray",
+                                        "font-size": "0.8em"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "margin": "10px 0"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "30%"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "Technical Owner:",
+                      "style": {
+                        "color": "#007F00",
+                        "font-weight": "600",
+                        "white-space": "break-spaces"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$TechnicalArchitect.title]",
+                      "defaultHoverField": "[$TechnicalArchitect]",
+                      "style": {
+                        "color": "black",
+                        "margin-left": "5px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "30%"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "Functional Owner:",
+                      "style": {
+                        "color": "#007F00",
+                        "font-weight": "600",
+                        "white-space": "break-spaces"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$BA.title]",
+                      "defaultHoverField": "[$BA]",
+                      "style": {
+                        "color": "black",
+                        "margin-left": "5px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "width": "30%"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "txtContent": "Business Owner:",
+                      "style": {
+                        "color": "#007F00",
+                        "font-weight": "600",
+                        "white-space": "break-spaces"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "[$PrimaryBusinessOwner.title]",
+                      "defaultHoverField": "[$PrimaryBusinessOwner]",
+                      "style": {
+                        "color": "black",
+                        "margin-left": "5px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "People",
+                    "title": "View Business Stakeholders"
+                  },
+                  "txtContent": " Business",
+                  "style": {
+                    "cursor": "pointer",
+                    "color": "#007F00"
+                  },
+                  "customCardProps": {
+                    "openOnEvent": "click",
+                    "isBeakVisible": true,
+                    "formatter": {
+                      "elmType": "div",
+                      "style": {
+                        "padding": "10px",
+                        "flex-direction": "column",
+                        "align-items": "start",
+                        "min-height": "1.5em"
+                      },
+                      "children": [
+                        {
+                          "elmType": "span",
+                          "txtContent": "Primary Owner",
+                          "style": {
+                            "font-size": "1.2em",
+                            "color": "#007F00",
+                            "padding-bottom": "1px",
+                            "border-bottom": "2px solid #007F00",
+                            "width": "100%",
+                            "margin-bottom": "10px",
+                            "font-weight": "500"
+                          }
+                        },
+                        {
+                          "elmType": "div",
+                          "style": {
+                            "display": "flex",
+                            "flex-direction": "row",
+                            "justify-content": "flex-start",
+                            "padding-bottom": "0.5em"
+                          },
+                          "children": [
+                            {
+                              "elmType": "img",
+                              "attributes": {
+                                "src": "=getUserImage([$PrimaryBusinessOwner.email], 'S')"
+                              },
+                              "style": {
+                                "width": "3em",
+                                "height": "3em",
+                                "border-radius": "3em"
+                              }
+                            },
+                            {
+                              "elmType": "div",
+                              "style": {
+                                "margin-left": "0.5em"
+                              },
+                              "children": [
+                                {
+                                  "elmType": "div",
+                                  "txtContent": "[$PrimaryBusinessOwner.title]",
+                                  "style": {
+                                    "font-size": "1em"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "txtContent": "[$PrimaryBusinessOwner.email]",
+                                  "style": {
+                                    "color": "gray",
+                                    "font-size": "0.8em"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "elmType": "span",
+                          "txtContent": "Other Stakeholders",
+                          "style": {
+                            "font-size": "1.2em",
+                            "color": "#007F00",
+                            "padding-bottom": "1px",
+                            "border-bottom": "2px solid #007F00",
+                            "width": "100%",
+                            "margin-bottom": "10px",
+                            "font-weight": "500"
+                          }
+                        },
+                        {
+                          "elmType": "span",
+                          "forEach": "resource in [$OtherBusinessStakeholder]",
+                          "style": {
+                            "justify-content": "flex-start",
+                            "margin-top": "=if(loopIndex('resource') == 0, '0em', '0.5em')",
+                            "padding-bottom": "0.5em",
+                            "flex-direction": "column",
+                            "border-bottom": "= if(loopIndex('resource') < Number(length([$Developers]) - 1), '1px solid lightgray','0px')",
+                            "width": "100%"
+                          },
+                          "children": [
+                            {
+                              "elmType": "div",
+                              "style": {
+                                "display": "flex",
+                                "flex-direction": "row",
+                                "justify-content": "flex-start"
+                              },
+                              "children": [
+                                {
+                                  "elmType": "img",
+                                  "attributes": {
+                                    "src": "=getUserImage([$resource.email], 'S')"
+                                  },
+                                  "style": {
+                                    "width": "3em",
+                                    "height": "3em",
+                                    "border-radius": "3em"
+                                  }
+                                },
+                                {
+                                  "elmType": "div",
+                                  "style": {
+                                    "margin-left": "0.5em"
+                                  },
+                                  "children": [
+                                    {
+                                      "elmType": "div",
+                                      "txtContent": "[$resource.title]",
+                                      "style": {
+                                        "font-size": "1em"
+                                      }
+                                    },
+                                    {
+                                      "elmType": "div",
+                                      "txtContent": "[$resource.email]",
+                                      "style": {
+                                        "color": "gray",
+                                        "font-size": "0.8em"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "margin": "10px 0 0",
+                "justify-content": "center",
+                "padding": "10px",
+                "background-color": "#EBEBEB",
+                "border-radius": "10px"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "flex-direction": "column"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "EndPointSolid"
+                      },
+                      "style": {
+                        "padding-bottom": "5px",
+                        "text-align": "center",
+                        "font-size": "1.5em",
+                        "color": "= if(indexOf(join([$ProjectStatus], ','), 'Initiated') > -1, '#007F00','#99999')"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "Initiated"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "align-items": "center",
+                    "width": "10%",
+                    "padding-bottom": "1.5em"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "background-color": "#999999",
+                        "width": "100%",
+                        "height": "3px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "flex-direction": "column"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "SkypeCircleCheck",
+                        "title": "= if(indexOf(join([$ProjectStatus], ','), 'Proposal') < 0, 'Not Started',if(indexOf(join([$ProjectStatus], ','), 'Proposal - Approved') > -1, 'Proposal - Approved',if(indexOf(join([$ProjectStatus], ','), 'Proposal - Submitted') > -1, 'Proposal - Submitted', 'Proposal - In Progress')))"
+                      },
+                      "style": {
+                        "padding-bottom": "5px",
+                        "text-align": "center",
+                        "font-size": "1.5em",
+                        "color": "= if(indexOf(join([$ProjectStatus], ','), 'Proposal') < 0, '#999999',if(indexOf(join([$ProjectStatus], ','), 'Proposal - Approved') > -1, '#007F00',if(indexOf(join([$ProjectStatus], ','), 'Proposal - Submitted') > -1, '#99CC00', '#FF9900')))"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "Proposal"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "align-items": "center",
+                    "width": "10%",
+                    "padding-bottom": "1.5em"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "background-color": "#999999",
+                        "width": "100%",
+                        "height": "3px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "flex-direction": "column"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "SkypeCircleCheck",
+                        "title": "= if(indexOf(join([$ProjectStatus], ','), 'Development') < 0, 'Not Started', if(indexOf(join([$ProjectStatus], ','), 'Development - Completed') > -1, 'Development - Completed','Development - In Progress') )"
+                      },
+                      "style": {
+                        "padding-bottom": "5px",
+                        "text-align": "center",
+                        "font-size": "1.5em",
+                        "color": "= if(indexOf(join([$ProjectStatus], ','), 'Development') < 0, '#999999', if(indexOf(join([$ProjectStatus], ','), 'Development - Completed') > -1, '#007F00','#FF9900') )"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "Development"
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "align-items": "center",
+                    "width": "10%",
+                    "padding-bottom": "1.5em"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "background-color": "#999999",
+                        "width": "100%",
+                        "height": "3px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "flex-direction": "column"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "SkypeCircleCheck",
+                        "title": "= if(indexOf(join([$ProjectStatus], ','), 'UAT') < 0, 'Not Started', if(indexOf(join([$ProjectStatus], ','), 'UAT - Completed') > -1, 'UAT - Completed','UAT - In Progress') )"
+                      },
+                      "style": {
+                        "padding-bottom": "5px",
+                        "text-align": "center",
+                        "font-size": "1.5em",
+                        "color": "= if(indexOf(join([$ProjectStatus], ','), 'UAT') < 0, '#999999', if(indexOf(join([$ProjectStatus], ','), 'UAT - Completed') > -1, '#007F00','#FF9900') )"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "UAT",
+                      "style": {
+                        "min-width": "43px",
+                        "text-align": "center"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "align-items": "center",
+                    "width": "10%",
+                    "padding-bottom": "1.5em"
+                  },
+                  "children": [
+                    {
+                      "elmType": "div",
+                      "style": {
+                        "background-color": "#999999",
+                        "width": "100%",
+                        "height": "3px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "display": "flex",
+                    "flex-direction": "column"
+                  },
+                  "children": [
+                    {
+                      "elmType": "span",
+                      "attributes": {
+                        "iconName": "POISolid",
+                        "title": "= if(indexOf(join([$ProjectStatus], ','), ',Completed') > -1, 'Completed', if(indexOf(join([$ProjectStatus], ','), 'Deployment - In Progress') > -1, 'Deployment - In Progress','Not Started') )"
+                      },
+                      "style": {
+                        "padding-bottom": "5px",
+                        "text-align": "center",
+                        "font-size": "1.5em",
+                        "color": "= if(indexOf(join([$ProjectStatus], ','), ',Completed') > -1, '#007F00', if(indexOf(join([$ProjectStatus], ','), 'Deployment - In Progress') > -1, '#FF9900','#999999') )"
+                      }
+                    },
+                    {
+                      "elmType": "span",
+                      "txtContent": "Completed"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "display": "flex",
+            "flex-direction": "column",
+            "width": "30%",
+            "padding-left": "10px",
+            "vertical-align": "top",
+            "margin-bottom": "auto"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "flex-direction": "row"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "txtContent": "Comments",
+                  "style": {
+                    "color": "#007F00",
+                    "font-weight": "600",
+                    "padding-bottom": "5px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": " Edit",
+                  "attributes": {
+                    "iconName": "EditSolid12"
+                  },
+                  "style": {
+                    "color": "#007F00",
+                    "font-weight": "600",
+                    "padding-bottom": "5px",
+                    "float": "right",
+                    "cursor": "pointer",
+                    "padding-right": "10px"
+                  },
+                  "customCardProps": {
+                    "openOnEvent": "click",
+                    "isBeakVisible": true,
+                    "directionalHint": "leftCenter",
+                    "formatter": {
+                      "elmType": "div",
+                      "txtContent": "[$Comments]",
+                      "inlineEditField": "[$Comments]",
+                      "style": {
+                        "padding": "15px",
+                        "width": "= 0.8 * @window.innerWidth + 'px'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "overflow-y": "scroll",
+                "border": "1px dashed green",
+                "padding": "5px",
+                "white-space": "break-spaces",
+                "height": "135px"
+              },
+              "txtContent": "[$Comments]"
+            }
+          ]
+        }
+      ]
+    }
+  }
