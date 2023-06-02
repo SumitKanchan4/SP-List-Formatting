@@ -96,7 +96,7 @@
                   "attributes": {
                     "title": "Project Folder",
                     "target": "_blank",
-                    "href": "#",
+                    "href": "= @currentWeb + '/Shared Documents/' + [$Title]",
                     "iconName": "FabricFolderFill"
                   },
                   "style": {
